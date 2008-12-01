@@ -1,7 +1,7 @@
 <?php 
 /*
 Plugin Name: phpbb_recent_topics
-Plugin URI: http://www.linickx.com/archives/392/recent-phpbb-topics-on-wordpress-plugin-v04
+Plugin URI: http://www.linickx.com/archives/682/phpbb_recent_topics-version-041
 Description: This plugin grabs your recent phpBB topics for you to display in wordpress.
 Version: 0.4.1
 Author: Nick [LINICKX] Bettison
@@ -90,6 +90,10 @@ function wiget_options_phpbb_recent_topics() {
 }
 
 	function widget_phpbb_recent_topics($args) {
+
+		# Credits to http://toni.uebernickel.info/entwicklung/wordpress/phpbb-recent-topics-widget/
+		# for pointing out my mistake!!
+
 		// get variables
 		extract($args);
 		// retrieve title
