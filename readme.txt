@@ -1,10 +1,10 @@
 === Plugin Name ===
-Contributors: Nick Bettison - LINICKX
-Donate link: http://www.linickx.com/index.php?content=donate
-Tags: phpBB, forum, topics, sidebar
+Contributors: linickx
+Donate link: http://www.linickx.com/donate
+Tags: phpBB, forum, topics, sidebar, posts
 Requires at least: 2.0.9
-Tested up to: 2.8.4
-Stable tag: 0.5.3
+Tested up to: 2.9.2
+Stable tag: 0.6
 
 This plugin grabs your recent phpBB forum topics for you to display in wordpress.
 
@@ -95,6 +95,18 @@ Yes, use the Insecure Connectivity method, and change the host to the IP address
 
 == Changelog ==
 
+= 0.6 =
+* Code by Number3NL
+** PHPBB Recent Posts
+** 1st Draft - Tool Tip Feature
+** SQL Query Re-Write / Improvement
+* Code Clean Up - Variables
+* Tool Tip Feature Improvement
+** Custom Size
+** Strip Tags :) 
+* Uninstall compatability
+* Admin UI Improvements
+
 = 0.5.3 =
 * Minor Bug Fix for Error Msg: Invalid argument supplied on line 144
 
@@ -147,6 +159,10 @@ You need to type the following syntax into your mysql database
 AND
 
 `GRANT SELECT ON phpbb_database.phpbb_forums TO wp_user@localhost;`
+
+AND
+
+`GRANT SELECT ON phpbb_database.phpbb_posts TO wp_user@localhost;`
 
 this can be achieved by logging into phpmyadmin as your phpbb user, selecting SQL and pasting the correct GRANT into the text box.
 
