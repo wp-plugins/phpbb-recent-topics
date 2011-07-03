@@ -4,7 +4,7 @@ Donate link: http://www.linickx.com/donate
 Tags: phpBB, forum, topics, sidebar, posts
 Requires at least: 2.0.9
 Tested up to: 3.1.4
-Stable tag: 0.7
+Stable tag: 0.7.1
 
 This plugin grabs your recent phpBB forum topics for you to display in wordpress.
 
@@ -94,6 +94,9 @@ Yes, use the Insecure Connectivity method, and change the host to the IP address
 1. The Admin interface, where you set up the magic !
 
 == Changelog ==
+
+= 0.7.1 =
+* Last minute date fix!
 
 = 0.7 =
 * WordPress 3.1.4 Testing
