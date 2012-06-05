@@ -95,6 +95,9 @@ Yes, use the Insecure Connectivity method, and change the host to the IP address
 
 == Changelog ==
 
+= 0.7.3 =
+* Human (fuzzy) time option added
+
 = 0.7.2 =
 * News feed error handling Trac Ticket #1370
 

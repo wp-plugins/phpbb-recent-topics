@@ -24,6 +24,7 @@ Below is a list descibing what each option does, good luck and may the force be 
 <li><strong>phpbb forum URL:</strong> This is the link to your forum such as www.domain.com/phpbb3.</li>
 <li><strong>Number of Topics to show:</strong> This is the number of items to show.</li>
 <li><strong>Date and Time Formmating:</strong> This is tweaks the output of the date and time, more infomation can be found <a href="http://codex.wordpress.org/Formatting_Date_and_Time">in codex here</a>, make this blank if you want to suppress the date and time.</li>
+<li><strong>Human / Fuzzy Time:</strong> This option will over-ride the <em>normal</em> date output and use the WordPress <a href="http://codex.wordpress.org/Function_Reference/human_time_diff">human time function</a> to show post dates as 1 day ago.</li>
 <li><strong>Sort Results by Post Date:</strong> By default the topic list is sorted by the creation date of the subject, tick this box to sort by the date of the most recent post in a subject.</li>
 <li><strong>Enable Tooltip:</strong> This option enables a fancy tooltip showing the first post.</li>
 <li><strong>Tooltip Size:</strong> Only available if the tooltip is enabled, you can tweak how long the tooltip should be.</li>

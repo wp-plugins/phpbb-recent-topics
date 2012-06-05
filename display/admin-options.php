@@ -22,6 +22,7 @@
 		$lnx_PRT_options['prt_phpbb_dbinsecureuid'] = "phpbbuser";
 		$lnx_PRT_options['prt_phpbb_dbinsecurepw'] = "phpbbpass";
 		$lnx_PRT_options['prt_phpbb_dbinsecurehost'] = "localhost";
+		$lnx_PRT_options['prt_phpbb_humantime'] = "0";
 		
 		update_option('lnx_PRT_options', $lnx_PRT_options); // Save new options array to db.
 		
@@ -149,6 +150,12 @@
 <th scope="row"><?php _e('Date and Time Formmating') ?></th>
 <td><input name="lnx_PRT_options[prt_phpbb_date]" value="<?php echo $lnx_PRT_options['prt_phpbb_date']; ?>" />
 <span class="description"> See <a href="http://codex.wordpress.org/Formatting_Date_and_Time">WP Codex Documentation on date formatting</a></span></td>
+</tr>
+<tr valign="top">
+<th scope="row"><?php _e('Human / Fuzzy Time') ?></th>
+<td>
+<table><tr><td>Enable</td><td><input type="checkbox" name="lnx_PRT_options[prt_phpbb_humantime]" value="1" <?php if ($lnx_PRT_options['prt_phpbb_humantime'] == "1") { echo "checked"; } ?>/></td><td><span class="description">This will override the date formatting ^above^ and show dates like <em>yesterday</em> or <em>5 minutes ago</em></span></td></tr></table>
+</td>
 </tr>
 <tr valign="top">
 <th scope="row"><?php _e('Sort Results by Post Date') ?></th>

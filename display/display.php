@@ -141,7 +141,13 @@
 				}
 				
 				$phpbb_time = date( 'Y-m-d H:i:s', $phpbb_time );
-				echo "<small><i>" . mysql2date("$lnx_PRT_options[prt_phpbb_date]", $phpbb_time) . "</i></small>\n";
+
+				if ($lnx_PRT_options['prt_phpbb_humantime'] == "1") {
+					$phpbb_time = mysql2date("U", $phpbb_time);
+					echo "<small><i>" . human_time_diff($phpbb_time) . " ago.</i></small>\n";
+				} else {
+					echo "<small><i>" . mysql2date("$lnx_PRT_options[prt_phpbb_date]", $phpbb_time) . "</i></small>\n";
+				}
 			}
 			
 			if (function_exists('phpbb_topics_callback')) {
