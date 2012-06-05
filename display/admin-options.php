@@ -81,22 +81,22 @@
 <tr valign="top">
 <th scope="row"><?php _e('Enable Insecure Database Connection') ?></th>
 <td>
-<table><tr><td>Enable</td><td><input type="checkbox" name="lnx_PRT_options[prt_phpbb_dbinsecureon]" value="1" <?php if ($lnx_PRT_options['prt_phpbb_dbinsecureon'] == "1") { echo "checked"; } ?>/>
+<table><tr><td><?php _e('Enable') ?></td><td><input type="checkbox" name="lnx_PRT_options[prt_phpbb_dbinsecureon]" value="1" <?php if ($lnx_PRT_options['prt_phpbb_dbinsecureon'] == "1") { echo "checked"; } ?>/>
 <?php
 	if ($tt_results) {
 	?>
-<span class="description"><strong>Connectivity Established,</strong>
+<span class="description"><strong><?php _e('Connectivity Established') ?>,</strong>
 		<?php if ($lnx_PRT_options['prt_phpbb_dbinsecureon'] == "1") {
-			echo " you use this at your own risk.";
+			_e(' you use this at your own risk.');
 		} else {
-			echo " this option is not required.";
+			_e(' this option is not required.');
 		}	
 		?>
 </span>
 <?php
 	} else {
 	?>
-<span class="description"> Only do this if you really have too! Please see README for more details</span>
+<span class="description"> <?php _e('Only do this if you really have too! Please see README for more details') ?></span>
 <?php
 	}
 	?>
@@ -149,18 +149,18 @@
 <tr valign="top">
 <th scope="row"><?php _e('Date and Time Formmating') ?></th>
 <td><input name="lnx_PRT_options[prt_phpbb_date]" value="<?php echo $lnx_PRT_options['prt_phpbb_date']; ?>" />
-<span class="description"> See <a href="http://codex.wordpress.org/Formatting_Date_and_Time">WP Codex Documentation on date formatting</a></span></td>
+<span class="description"> <?php echo sprintf(__('See WP Codex Documentation on date formatting'), 'href="http://codex.wordpress.org/Formatting_Date_and_Time'); ?></span></td>
 </tr>
 <tr valign="top">
 <th scope="row"><?php _e('Human / Fuzzy Time') ?></th>
 <td>
-<table><tr><td>Enable</td><td><input type="checkbox" name="lnx_PRT_options[prt_phpbb_humantime]" value="1" <?php if ($lnx_PRT_options['prt_phpbb_humantime'] == "1") { echo "checked"; } ?>/></td><td><span class="description">This will override the date formatting ^above^ and show dates like <em>yesterday</em> or <em>5 minutes ago</em></span></td></tr></table>
+<table><tr><td><?php _e('Enable') ?></td><td><input type="checkbox" name="lnx_PRT_options[prt_phpbb_humantime]" value="1" <?php if ($lnx_PRT_options['prt_phpbb_humantime'] == "1") { echo "checked"; } ?>/></td><td><span class="description"><?php _e('This will override the date formatting above and show dates like <em>yesterday</em> or <em>5 minutes ago</em>') ?></span></td></tr></table>
 </td>
 </tr>
 <tr valign="top">
 <th scope="row"><?php _e('Sort Results by Post Date') ?></th>
 <td>
-<table><tr><td>Enable</td><td><input type="checkbox" name="lnx_PRT_options[prt_phpbb_latest_topic]" value="1" <?php if ($lnx_PRT_options['prt_phpbb_latest_topic'] == "1") { echo "checked"; } ?>/></td><td><span class="description">By default results are sorted by the Date of Topic <em>creation</em>, this will sort topics by <em>freshness</em>.</span></td></tr></table>
+<table><tr><td><?php _e('Enable') ?></td><td><input type="checkbox" name="lnx_PRT_options[prt_phpbb_latest_topic]" value="1" <?php if ($lnx_PRT_options['prt_phpbb_latest_topic'] == "1") { echo "checked"; } ?>/></td><td><span class="description"><?php _e('By default results are sorted by the Date of Topic <em>creation</em>, this will sort topics by <em>freshness</em>') ?>.</span></td></tr></table>
 </td>
 </tr>
 <tr valign="top">
@@ -169,11 +169,11 @@
 <?php
 	if ($pt_results) {
 	?>
-<table><tr><td>Enable</td><td><input type="checkbox" name="lnx_PRT_options[prt_phpbb_body_as_tooltip]" value="1" <?php if ($lnx_PRT_options['prt_phpbb_body_as_tooltip'] == "1") { echo "checked"; } ?>/></td><td><span class="description"> The post content will be shown as a tooltip over the hyperlink.</span></td></tr></table>
+<table><tr><td><?php _e('Enable') ?></td><td><input type="checkbox" name="lnx_PRT_options[prt_phpbb_body_as_tooltip]" value="1" <?php if ($lnx_PRT_options['prt_phpbb_body_as_tooltip'] == "1") { echo "checked"; } ?>/></td><td><span class="description"> <?php _e('The post content will be shown as a tooltip over the hyperlink') ?>.</span></td></tr></table>
 <?php
 	} else {
-	?>
-	Please add new GRANT permissions <code>`GRANT SELECT ON phpbb_database.phpbb_posts TO wp_user@localhost;`</code> <br /><span class="description">See README for more details</span>
+	
+		_e('Please add new GRANT permissions'); ?> <code>`GRANT SELECT ON phpbb_database.phpbb_posts TO wp_user@localhost;`</code> <br /><span class="description"><?php _e('See README for more details') ?></span>
 <?php
 	}
 	?>
@@ -185,7 +185,7 @@
 <tr valign="top">
 <th scope="row"><?php _e('Tooltip Size') ?></th>
 <td><input name="lnx_PRT_options[prt_phpbb_tooltipsize]" value="<?php echo $lnx_PRT_options['prt_phpbb_tooltipsize']; ?>" />
-<span class="description"> How many characters show we show in the tooltip bubble? </span>
+<span class="description"> <?php _e('How many characters show we show in the tooltip bubble?') ?> </span>
 </td>
 </tr>
 <?php
@@ -215,7 +215,7 @@
 	?>
 <tr valign="top">
 <th scope="row"><?php _e('Excluded Forums Not Enabled') ?></th>
-<td>Please add new GRANT permissions <code>GRANT SELECT ON phpbb_database.phpbb_forums TO wp_user@localhost;</code> <br /><span class="description">See README for more details</span></td>
+<td><?php _e('Please add new GRANT permissions') ?> <code>GRANT SELECT ON phpbb_database.phpbb_forums TO wp_user@localhost;</code> <br /><span class="description"><?php _e('See README for more details') ?></span></td>
 </tr>
 <?php
 	}
@@ -225,7 +225,7 @@
 <tr valign="top">
 <th scope="row"><?php _e('Open link in new window') ?></th>
 <td>
-<table><tr><td>Enable</td><td><input type="checkbox" name="lnx_PRT_options[prt_phpbb_newwin]" value="1" <?php if ($lnx_PRT_options['prt_phpbb_newwin'] == "1") { echo "checked"; } ?>/></td></tr></table>
+<table><tr><td><?php _e('Enable') ?></td><td><input type="checkbox" name="lnx_PRT_options[prt_phpbb_newwin]" value="1" <?php if ($lnx_PRT_options['prt_phpbb_newwin'] == "1") { echo "checked"; } ?>/></td></tr></table>
 </td>
 </tr>
 
@@ -240,11 +240,11 @@
 	# Let's tell users about phpbb_recent_topics news!
 	$lnx_feed = fetch_feed('http://www.linickx.com/archives/tag/phpbb_recent_topics/feed');
 	?>
-<h3>phpBB Recent Topics News</h3>
+<h3><?php _e('phpBB Recent Topics News') ?></h3>
 <ul>
 <?php
 	if (isset($lnx_lifestream_feed->errors)) {
-		echo '<li><b>Error Downloading Feed</b>. Looks like you are going to have to visit <a href="http://www.linickx.com/tag/phpbb_recent_topics/">www.linickx.com/tag/phpbb_recent_topics</a> manually to keep up with the news! </li>';
+		echo '<li><b>' . __('Error Downloading Feed') . '</b>.' . __('Looks like you are going to have to visit') . '<a href="http://www.linickx.com/tag/phpbb_recent_topics/">www.linickx.com/tag/phpbb_recent_topics</a>' . __('manually to keep up with the news!') . '</li>';
 	} else {
 		foreach ($lnx_feed->get_items() as $item){
 			printf('<li><a href="%s">%s</a></li>',$item->get_permalink(), $item->get_title());
@@ -252,7 +252,7 @@
 	}
 	?>
 </ul>
-<p><small><a href="http://www.linickx.com/tag/phpbb_recent_topics/feed">Subcribe to this feed</a></small></p>
+<p><small><a href="http://www.linickx.com/tag/phpbb_recent_topics/feed"><?php _e('Subcribe to this feed') ?></a></small></p>
 
 </div>
 <?php
@@ -265,7 +265,7 @@
 <div class="wrap">
 <h2><?php _e('phpBB Recent Topics') ?></h2>
 
-<p>Sorry you do not have access to this page</p>
+<p><?php _e('Sorry you do not have access to this page') ?></p>
 
 </div>
 

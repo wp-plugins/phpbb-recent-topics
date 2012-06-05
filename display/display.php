@@ -144,7 +144,10 @@
 
 				if ($lnx_PRT_options['prt_phpbb_humantime'] == "1") {
 					$phpbb_time = mysql2date("U", $phpbb_time);
-					echo "<small><i>" . human_time_diff($phpbb_time) . " ago.</i></small>\n";
+					$human_time = human_time_diff($phpbb_time);
+					echo "<small><i>";
+					printf(__('%d ago.'), $human_time);
+					echo "</i></small>\n";
 				} else {
 					echo "<small><i>" . mysql2date("$lnx_PRT_options[prt_phpbb_date]", $phpbb_time) . "</i></small>\n";
 				}
@@ -160,7 +163,9 @@
 		echo "</ul>";
 		
 	} else {
-		echo "<h2> phpBB Error - $lnx_PRT_options[prt_phpbb_tt] </h2>"; // No Results!
+		echo "<h2>";
+		_e('phpBB database error');
+		echo " - $lnx_PRT_options[prt_phpbb_tt] </h2>"; // No Results!
 	}
 	
 	if ($lnx_PRT_options['prt_phpbb_dbinsecureon'] != "1") {
